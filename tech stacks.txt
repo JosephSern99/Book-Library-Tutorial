@@ -22,3 +22,5 @@ sampleBooks[0] -> where all conts books is stored currently
 cn() -> This function, cn, takes a variable number of CSS class values as input, merges \
 them using clsx and twMerge -> merging css class tgt
 
+eslint.config.mjs - to structure the project into certain standards
+

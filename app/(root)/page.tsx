@@ -2,7 +2,7 @@ import BookList from "@/components/BookList";
 import BookOverview from "@/components/BookOverview";
 import { sampleBooks } from "../constants";
 
-const Home = () => 
+const Home = () => (
   <>
     <BookOverview {...sampleBooks[0]} />
     <BookList
@@ -11,6 +11,5 @@ const Home = () =>
       containerClassName="mt-28"
     />
   </>
-;
-
+);
 export default Home;

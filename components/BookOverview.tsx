@@ -1,6 +1,7 @@
-import React from 'react'
+import React from "react";
 import Image from "next/image";
-import BookCover from './BookCover';
+import BookCover from "@/components/BookCover";
+import { Button } from "./ui/button";
 
 const BookOverview = ({
   title,
@@ -11,10 +12,11 @@ const BookOverview = ({
   availableCopies,
   description,
   coverColor,
-  coverUrl
-} : Book) => {
+  coverUrl,
+  videoUrl,
+}: Book) => {
   return (
-    <section className='book-overview'>
+    <section className="book-overview">
       <div className="flex flex-1 flex-col gap-5">
         <h1>{title}</h1>
 
@@ -46,6 +48,10 @@ const BookOverview = ({
 
         <p className="book-description">{description}</p>
 
+        <Button className="book-overview_btn">
+          <Image src="/icons/book.svg" alt="book" width={20} height={20} />
+          <p className="font-bebas-neue text-xl text-dark-100">Borrow</p>
+        </Button>
       </div>
 
       <div className="relative flex flex-1 justify-center">
@@ -67,7 +73,7 @@ const BookOverview = ({
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default BookOverview
+export default BookOverview;
