@@ -4,6 +4,7 @@ shadcn/ui - button and form component
 --shadcn form npx shadcn@latest add form
 --shadcn input npx shadcn@latest add input
 --shadcn toast npx shadcn@latest add toast
+--shadcn avatar npx shadcn@latest add avatar
 
 
 Neon PostgreSQL - database server that can do autoscaling configuration at a free conts
@@ -19,12 +20,23 @@ npx drizzle-kit migrate
 npx drizzle-kit studio
 
 drizzle.ts
+-- drizzle is ideal for type-safety and standardization
 
+AuthForm + zod resolver to resolve default value
 "AuthForm.tsx" -> "use client" -> because many of it is managed at the client side
 
 imagekit.io - for handling images and videos
 -- npm install imagekitio-next
 -- npm install imagekit
+
+
+auth.js
+- npm install next-auth@beta bcryptjs
+- npm install --save-dev @types/bcryptjs
+- npx auth secret - to create environment variables
+-- adapters -- connect to backend database for user account and sessions
+-- adapters is good for project complexity
+-- upstash redis
 
 upstash - caching, session management
 upstash workflow - onboarding, inactivity

@@ -1,15 +1,21 @@
-import Header from '@/components/Header'
-import { ReactNode } from 'react'
+import Header from "@/components/Header";
+import { ReactNode } from "react";
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
 
-const Layout = ( {children} : {children: ReactNode}) => {
-    return <main className='root-container'>
-        <div className='mx-auto max-w-7xl'>
-            <Header />
-            <div className='mt-20 pb-20'>
-                {children}
-            </div>
+const Layout = async ({ children }: { children: ReactNode }) => {
+  const session = await auth();
+
+  if (!session) redirect("/sign-in");
+
+  return (
+    <main className="root-container">
+      <div className="mx-auto max-w-7xl">
+        <Header session={session} />
+        <div className="mt-20 pb-20">{children}</div>
       </div>
-  </main>
-}
+    </main>
+  );
+};
 
-export default Layout
+export default Layout;
