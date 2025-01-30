@@ -1,26 +1,51 @@
 next.js - frontend component
 tailwindcss - styling modern web
 shadcn/ui - button and form component
-Neon PostgreSQL - database
+--shadcn form npx shadcn@latest add form
+--shadcn input npx shadcn@latest add input
+--shadcn toast npx shadcn@latest add toast
+
+
+Neon PostgreSQL - database server that can do autoscaling configuration at a free conts
+- neon allows you to sub branch your database just like Git
+- npm i drizzle-orm @neondatabase/serverless dotenv
+
 Drizzle ORM - database ORM
-imagekit.io
+- npm i drizzle-ORM
+- npm i -D drizzle-kit
+
+npx drizzle-kit generate
+npx drizzle-kit migrate
+npx drizzle-kit studio
+
+drizzle.ts
+
+"AuthForm.tsx" -> "use client" -> because many of it is managed at the client side
+
+imagekit.io - for handling images and videos
+-- npm install imagekitio-next
+-- npm install imagekit
+
 upstash - caching, session management
 upstash workflow - onboarding, inactivity
 
+Upstash Redis
 
-config files touched:
-tailwind.config.ts
-types.d.ts
-next.config.ts
+config files touched in the project:
+
+tailwind.config.ts - styling css and its variables
+types.d.ts - interface to be declare across components
+next.config.ts - 
 
 <BookOverview {...sampleBooks[0]}, ... here means spreading the properties in sampleBooks[0]
 
-
 sampleBooks[0] -> where all conts books is stored currently
-
 
 cn() -> This function, cn, takes a variable number of CSS class values as input, merges \
 them using clsx and twMerge -> merging css class tgt
 
 eslint.config.mjs - to structure the project into certain standards
 
+interface Props <T> -> T is generic types, waiting for what to be parsed in
+
+lib/validations.ts -> to declare form fields and its validations
