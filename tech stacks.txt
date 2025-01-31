@@ -42,6 +42,8 @@ upstash - caching, session management
 upstash workflow - onboarding, inactivity
 
 Upstash Redis
+- npm install @upstash/redis
+- npm install @upstash/ratelimit
 
 config files touched in the project:
 
@@ -61,3 +63,12 @@ eslint.config.mjs - to structure the project into certain standards
 interface Props <T> -> T is generic types, waiting for what to be parsed in
 
 lib/validations.ts -> to declare form fields and its validations
+
+
+Rate Limiting - Auth.js - too many requests
+
+Workflow - to check whether user has logged in or not
+- when is near to return the book, then have to create services to notify users
+Q - stash
+-- npx @upstash/qstash-cli dev
+-- npm install @upstash/workflow

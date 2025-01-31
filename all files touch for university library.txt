@@ -1,0 +1,34 @@
+(auth)
+
+(root)
+
+api/auth/[...nextauth]
+api/imagekit/route.ts
+
+app/global.css
+
+app/layout.tsx 
+
+All files in Components
+- except for ui dir
+
+interface
+
+next/auth
+
+configurations
+
+drizzle + neon setup
+
+Toast
+
+Header
+
+validation.ts
+
+database -> schema.ts + drizzle.ts
+
+lib / actions -> auth.ts, config.ts, auth.ts, validations.ts
+
+root/ auth.ts, drizzle.config.ts, middleware.ts, next.config.ts, tailwind.config.ts, types.d.ts
+
