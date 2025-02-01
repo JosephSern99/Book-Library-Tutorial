@@ -4,8 +4,8 @@ shadcn/ui - button and form component
 --shadcn form npx shadcn@latest add form
 --shadcn input npx shadcn@latest add input
 --shadcn toast npx shadcn@latest add toast
---shadcn avatar npx shadcn@latest add avatar
-
+--shadcn avatar npx shadcn@latest add avatar | profile icon on the right
+--shadcn textarea npx shadcn@latest add textarea\
 
 Neon PostgreSQL - database server that can do autoscaling configuration at a free conts
 - neon allows you to sub branch your database just like Git
@@ -45,6 +45,8 @@ Upstash Redis
 - npm install @upstash/redis
 - npm install @upstash/ratelimit
 
+Upstash -> ratelimit.ts
+
 config files touched in the project:
 
 tailwind.config.ts - styling css and its variables
@@ -73,8 +75,38 @@ Q - stash
 -- npx @upstash/qstash-cli dev
 -- npm install @upstash/workflow
 
+Q - Stash Workflow (The place to check for logs)
+
+Resend - logs to check for errors and debugging
+
 Resend with React components new email for developers to use
 // did continue with resend as need to pay money for hostinger for hosting purpose
 
 .toISOString().slice(0,10) in await db, is to ignore timestamp
 
+Check at Vercel server logs to find for errors
+
+Hostinger - Create email account for domain and to be used at workflow.ts - body/from
+
+
+Resend DNS Records copy over to Hostinger Manage DNS Records
+
+React-Colorful
+--npm install react-colorful
+
+lib/config.ts -> location to configure environment variables
+
+className="invert" - to change between light and dark theme
+
+max-md:hidden - to not show for desktop size
+
+asChild -> children property definition for react.js
+-> as a link to go back
+
+after building new schema, run command npx drizzle-kit generate
+
+interface Props extends Partial<Book> -> Partial to replace FieldValues, so validate a few fields only
+
+resolvers are function that handles responses/handle query coming from db
+
+components.json {cssVariables set to false to allow shadcn components not to be overrided}

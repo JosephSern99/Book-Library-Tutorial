@@ -19,12 +19,11 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-  FormDescription,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { FIELD_NAMES, FIELD_TYPES } from "@/app/constants";
-import ImageUpload from "./ImageUpload";
+import FileUpload from "@/components/FileUpload";
 import { toast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
 
@@ -35,7 +34,6 @@ interface Props<T extends FieldValues> {
   type: "SIGN_IN" | "SIGN_UP";
 }
 
-// to return render AuthForm component
 const AuthForm = <T extends FieldValues>({
   type,
   schema,
@@ -43,6 +41,7 @@ const AuthForm = <T extends FieldValues>({
   onSubmit,
 }: Props<T>) => {
   const router = useRouter();
+
   const isSignIn = type === "SIGN_IN";
 
   const form: UseFormReturn<T> = useForm({
@@ -52,19 +51,20 @@ const AuthForm = <T extends FieldValues>({
 
   const handleSubmit: SubmitHandler<T> = async (data) => {
     const result = await onSubmit(data);
+
     if (result.success) {
       toast({
         title: "Success",
         description: isSignIn
-          ? "You have successfully signed in"
-          : "You have successfully signed up",
+          ? "You have successfully signed in."
+          : "You have successfully signed up.",
       });
 
       router.push("/");
     } else {
       toast({
         title: `Error ${isSignIn ? "signing in" : "signing up"}`,
-        description: result.error ?? "An error occurred",
+        description: result.error ?? "An error occurred.",
         variant: "destructive",
       });
     }
@@ -80,13 +80,11 @@ const AuthForm = <T extends FieldValues>({
           ? "Access the vast collection of resources, and stay updated"
           : "Please complete all fields and upload a valid university ID to gain access to the library"}
       </p>
-
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(handleSubmit)}
-          className="space-y-6 w-full"
+          className="w-full space-y-6"
         >
-          {/* to render form fields map to each form field with default value*/}
           {Object.keys(defaultValues).map((field) => (
             <FormField
               key={field}
@@ -97,10 +95,15 @@ const AuthForm = <T extends FieldValues>({
                   <FormLabel className="capitalize">
                     {FIELD_NAMES[field.name as keyof typeof FIELD_NAMES]}
                   </FormLabel>
-
                   <FormControl>
                     {field.name === "universityCard" ? (
-                      <ImageUpload onFileChange={field.onChange} />
+                      <FileUpload
+                        type="image"
+                        accept="image/*"
+                        placeholder="Upload your ID"
+                        variant="dark"
+                        onFileChange={field.onChange}
+                      />
                     ) : (
                       <Input
                         required
@@ -117,11 +120,13 @@ const AuthForm = <T extends FieldValues>({
               )}
             />
           ))}
+
           <Button type="submit" className="form-btn">
-            {isSignIn ? "Sign in" : "Sign up"}
+            {isSignIn ? "Sign In" : "Sign Up"}
           </Button>
         </form>
       </Form>
+
       <p className="text-center text-base font-medium">
         {isSignIn ? "New to BookWise? " : "Already have an account? "}
 

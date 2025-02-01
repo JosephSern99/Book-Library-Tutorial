@@ -7,8 +7,8 @@ import { users } from "@/database/schema";
 const Home = async () => {
   // database connection to drizzle
 
-  const result = await db.select().from(users);
-  console.log(JSON.stringify(result));
+  // const result = await db.select().from(users);
+  // console.log(JSON.stringify(result));
 
   return (
     <>
