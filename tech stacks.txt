@@ -72,3 +72,9 @@ Workflow - to check whether user has logged in or not
 Q - stash
 -- npx @upstash/qstash-cli dev
 -- npm install @upstash/workflow
+
+Resend with React components new email for developers to use
+// did continue with resend as need to pay money for hostinger for hosting purpose
+
+.toISOString().slice(0,10) in await db, is to ignore timestamp
+
