@@ -25,10 +25,11 @@ drizzle.ts
 AuthForm + zod resolver to resolve default value
 "AuthForm.tsx" -> "use client" -> because many of it is managed at the client side
 
+"use server" for server interactions
+
 imagekit.io - for handling images and videos
 -- npm install imagekitio-next
 -- npm install imagekit
-
 
 auth.js
 - npm install next-auth@beta bcryptjs
@@ -110,3 +111,11 @@ interface Props extends Partial<Book> -> Partial to replace FieldValues, so vali
 resolvers are function that handles responses/handle query coming from db
 
 components.json {cssVariables set to false to allow shadcn components not to be overrided}
+
+Day.js
+npm install dayjs --save
+
+Seeding database
+-> run from neon, not from next.js
+
+-> npx tsx database/seed.ts

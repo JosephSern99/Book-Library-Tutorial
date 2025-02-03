@@ -245,7 +245,17 @@ const BookForm = ({ type, ...book }: Props) => {
               <FormLabel className="text-base font-normal text-dark-500">
                 Book Trailer
               </FormLabel>
-              <FormControl>f</FormControl>
+              <FormControl>
+                <FileUpload
+                  type="video"
+                  accept="video/*"
+                  placeholder="Upload a book trailer"
+                  folder="books/videos"
+                  variant="light"
+                  onFileChange={field.onChange}
+                  value={field.value}
+                />
+              </FormControl>
               <FormMessage />
             </FormItem>
           )}
@@ -259,14 +269,13 @@ const BookForm = ({ type, ...book }: Props) => {
                 Book Summary
               </FormLabel>
               <FormControl>
-                {/* <Textarea
+                <Textarea
                   placeholder="Book summary"
                   {...field}
                   rows={5}
                   className="book-form_input"
-                /> */}
+                />
               </FormControl>
-
               <FormMessage />
             </FormItem>
           )}
